@@ -1,0 +1,100 @@
+<%- include('../../includes/header') %>
+
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _3Jf0qivwg6USf6U5FSOLmh">
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs _3G9zSgXixiSDjAeYx2uDIm">
+            <!-- uiView: -->
+            <ui-view class="ng-scope">
+                <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                    <!-- uiView: -->
+                    <ui-view class="ng-scope" style="">
+                        <gupw-lobby-sport class="ng-scope ng-isolate-scope">
+
+                            <section ng-class="$ctrl.styles['sport-banner']" class="iGSqPzNgBg8Lqb5PeBTAC">
+                                <!-- ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <!-- ngIf: $ctrl.viewModel.currentItem.gameEntranceName == entrance.gameEntranceName -->
+                                <div class="saba" ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-if="$ctrl.viewModel.currentItem.gameEntranceName == entrance.gameEntranceName"
+                                    style="" id="bg_logo">
+                                    <div ng-class="$ctrl.styles.wrapper" class="_3G9zSgXixiSDjAeYx2uDIm">
+                                        <!-- ngIf: entrance.img1 -->
+                                        <img id="item_1" src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/74ffa977532b22bba7f31064cb69102b.png"><!-- end ngIf: entrance.img1 -->
+                                        <!-- ngIf: entrance.img2 -->
+                                        <img id="item_2" src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/b5038850f12428c83fb013b085de76b9.png"><!-- end ngIf: entrance.img2 -->
+                                        <!-- ngIf: entrance.img3 -->
+                                        <div ng-class="$ctrl.styles.info" class="_34OLxXDyT0JJbVDvTJ3TiR">
+                                            <div ng-class="$ctrl.styles.logo" class="_1nCaqWfBTeROhUE0o6TJ-x">
+                                            </div>
+                                            <p translate="Shared_Sport_Info" class="ng-scope" id="desc">Nhà cung cấp thể thao phổ
+                                                biến nhất ở Châu Á! Chọn trò chơi yêu thích của bạn</p>
+                                            <button type="button" translate="Shared_Play"
+                                                ng-click="$ctrl.viewModel.currentItem.click()" onclick="launchGame('SABA', 'SABA01')" class="ng-scope playBtn">Cược
+                                                Ngay</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end ngIf: $ctrl.viewModel.currentItem.gameEntranceName == entrance.gameEntranceName --><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index --><!-- ngIf: $ctrl.viewModel.currentItem.gameEntranceName == entrance.gameEntranceName --><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index --><!-- ngIf: $ctrl.viewModel.currentItem.gameEntranceName == entrance.gameEntranceName --><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index --><!-- ngIf: $ctrl.viewModel.currentItem.gameEntranceName == entrance.gameEntranceName --><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                            </section>
+
+                            <section>
+                                <ul class="list-unstyled sQpvrcvmGj828N9Fbik97" ng-class="$ctrl.styles['game-list']">
+                                    <!-- ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" data-produce="SABA" 
+                                        ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                        ng-class="{ 'active': entrance.active }" class="normal active" style="">
+                                        <figure>
+                                            <!-- ngIf: !entrance.imgUrl -->
+                                            <img ng-if="!entrance.imgUrl"
+                                                ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/57598e86a1972b3cbb344be7d5087b16.png"
+                                                class="ng-scope"
+                                                src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/57598e86a1972b3cbb344be7d5087b16.png"><!-- end ngIf: !entrance.imgUrl -->
+                                        </figure>
+                                    </li>
+                                    <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" data-produce="CMD" 
+                                        ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                        ng-class="{ 'active': entrance.active }" class="normal" style="">
+                                        <figure>
+                                            <!-- ngIf: !entrance.imgUrl -->
+                                            <img ng-if="!entrance.imgUrl"
+                                                ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/273584ad3637bbbbd7c7e778b8ad5048.png"
+                                                class="ng-scope"
+                                                src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/273584ad3637bbbbd7c7e778b8ad5048.png"><!-- end ngIf: !entrance.imgUrl -->
+                                        </figure>
+                                    </li>
+                                    <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" data-produce="UG"
+                                        ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                        ng-class="{ 'active': entrance.active }" class="normal">
+                                        <figure>
+                                            <!-- ngIf: !entrance.imgUrl -->
+                                            <img ng-if="!entrance.imgUrl"
+                                                ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/ae9ecfa6221551055cfb2738e9e1e2ba.png"
+                                                class="ng-scope"
+                                                src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/ae9ecfa6221551055cfb2738e9e1e2ba.png"><!-- end ngIf: !entrance.imgUrl -->
+                                        </figure>
+                                    </li>
+                                    <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" data-produce="SBO"
+                                        ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                        ng-class="{ 'active': entrance.active }" class="normal">
+                                        <figure>
+                                            <!-- ngIf: !entrance.imgUrl -->
+                                            <img ng-if="!entrance.imgUrl"
+                                                ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/bd60fb334b6dcee844434f42f7320d78.png"
+                                                class="ng-scope"
+                                                src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/bd60fb334b6dcee844434f42f7320d78.png"><!-- end ngIf: !entrance.imgUrl -->
+                                        </figure>
+                                    </li>
+                                    <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                </ul>
+                            </section>
+                        </gupw-lobby-sport>
+                    </ui-view>
+                </gupw-sample-lobby-layout>
+            </ui-view>
+        </div>
+    </div>
+
+
+    <script src="/core/js/lobby/sport.js"></script>
+    <%- include('../../includes/footer') %>

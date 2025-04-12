@@ -1,0 +1,324 @@
+<%- include('../../includes/header') %>
+
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _36ppPSTbN9XivyGtnzMIOL">
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs _1hJ2Og1kJR7tzQ7NyPahFP">
+            <!-- uiView: -->
+            <ui-view class="ng-scope">
+                <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                    <!-- uiView: -->
+                    <ui-view class="ng-scope">
+                        <gupw-lobby-slot class="ng-scope ng-isolate-scope">
+
+                            <div class="-XrqkevdgKslaYRvW4lgU-slot"></div>
+
+                            <!-- <section ng-class="$ctrl.styles['slot-banner']" class="Gt2lBcAuzw4Nj0CPQ0KrQ">
+                                <div ng-class="$ctrl.styles.wrapper" class="_1hJ2Og1kJR7tzQ7NyPahFP">
+                                    <img
+                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/bfd0e5a750eed9566014a6bc9ae8eed0.png">
+                                    <img
+                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/a34a6f0629978e51e6211fa37cc8888b.png">
+                                    <img
+                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/cb7cb5f324fd2bb23c693d8c80ea653d.png">
+                                    <img
+                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/06d1f25f4bf23e752f29873401c82113.png">
+
+                                    <div ng-class="$ctrl.styles.numArea" class="_2Tmt3AMzR5-kongGTODjQK">
+                                        <div ng-repeat="num in $ctrl.bonusBoardViewer.stringBonus track by $index"
+                                            ng-class="$ctrl.styles.prize" ng-switch="" on="num"
+                                            class="ng-scope _L8nrJzjRf-yL7Yrcth52">
+                                            <div ng-switch-default="" ng-class="$ctrl.styles.prizeNum"
+                                                class="ng-binding ng-scope" id="jackpot-countup">0</div>
+                                        </div>
+                                        <span>&nbsp;VNĐ</span>
+                                    </div>
+                                </div>
+                            </section> -->
+
+
+
+
+                            <gupw-lobby-slot-list class="ng-isolate-scope">
+                                <div ng-class="$ctrl.styles.wrapper" class="RcO670FZ_z31zqi7H7vuc">
+                                    <ul class="list-unstyled list-slot-production">
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="JILI" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal active" style="">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/ad678a57b02e3de19916e8ee861613c7.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/ad678a57b02e3de19916e8ee861613c7.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        JILI Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="PG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal" style="">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/25d8be9379857edbbcc31b270e99206a.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/25d8be9379857edbbcc31b270e99206a.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">PG
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="TP" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/871ae475629a622f8fd5b6c9494fba58.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/871ae475629a622f8fd5b6c9494fba58.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">TP
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="FC" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/0d7a5ec6ec831a74d8494fd1df0fcbc7.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/0d7a5ec6ec831a74d8494fd1df0fcbc7.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">FC
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="JDB" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/70cd93621d5b460eca907dd5d7b73e69.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/70cd93621d5b460eca907dd5d7b73e69.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        JDB Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="CQ9" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/73dcd5868e54b1b1acbf06cc0e0e45fa.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/73dcd5868e54b1b1acbf06cc0e0e45fa.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        CQ9 Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="PP" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/129c41c51f210f8ca00a6df3a506f063.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/129c41c51f210f8ca00a6df3a506f063.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">PP
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="MG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/ef7503641949e1dd3736c8bb982ef184.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/ef7503641949e1dd3736c8bb982ef184.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">MG
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="VA" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/8fe851b47b4862fcfc546198b192bfb5.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/8fe851b47b4862fcfc546198b192bfb5.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">VA
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="BNG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/66489ff92ce226a740fd45e81f555c8a.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/66489ff92ce226a740fd45e81f555c8a.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        BNG Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="RICH88" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/1a7ff9eef763037cbbd8eaa56ee48333.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/1a7ff9eef763037cbbd8eaa56ee48333.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        RICH88 Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="KA" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/7f28c30fa468382695f036ee1bab96f4.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/7f28c30fa468382695f036ee1bab96f4.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">KA
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="FTG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/25f6c7bdd602d45ec79435e1499b79b7.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/25f6c7bdd602d45ec79435e1499b79b7.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        FTG Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="PS" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/d052b619ab0f9eb49f0f1451b100a74c.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/d052b619ab0f9eb49f0f1451b100a74c.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">PS
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="PT" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/74b835afb82a7db609ed5477219157af.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/74b835afb82a7db609ed5477219157af.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">PT
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="HB" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/3dd2fc9dfe3a599b41ef85b6186df2c7.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/3dd2fc9dfe3a599b41ef85b6186df2c7.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">HB
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="NE" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/3e0479beb1efd6a6c958a42a67ad5c19.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/3e0479beb1efd6a6c958a42a67ad5c19.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">NE
+                                                        Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="SPRIBE" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/11965ed48d7fa609d0b5611f5a586bbc.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/11965ed48d7fa609d0b5611f5a586bbc.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        Spribe Điện Tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            data-produce="RSG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/164c1de449c873b90d48a7a0a9f258b7.png"
+                                                    class="ng-scope"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/164c1de449c873b90d48a7a0a9f258b7.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        RSG Điện tử</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+
+                                    </ul>
+
+                                    <iframe class="iframeElement" src="/Lobby/Game/JL" style="border-top: 6px solid #ff4d00;"></iframe>
+
+                                </div>
+                            </gupw-lobby-slot-list>
+                        </gupw-lobby-slot>
+                    </ui-view>
+                </gupw-sample-lobby-layout>
+            </ui-view>
+        </div>
+    </div>
+
+    <script src="/core/js/lobby/slot.js"></script>
+    <%- include('../../includes/footer') %>

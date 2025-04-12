@@ -1,0 +1,579 @@
+<%- include('../../includes/header') %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&family=Tinos&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Saira+Semi+Condensed:wght@700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        ._32BGGm53XyuQqbr3GBlW0b>div {
+            margin: auto;
+            width: 100%;
+            height: 600px;
+        }
+
+        .row-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            background-color: #111212;
+            overflow: hidden;
+        }
+
+        .iframe-row {
+            flex-grow: 1;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .full-screen-icon {
+            cursor: pointer;
+            margin-top: 5px;
+            position: absolute;
+            right: 10;
+        }
+
+        .sound-audio-icon {
+            cursor: pointer;
+            margin-top: 5px;
+            position: absolute;
+            right: 60;
+        }
+
+        .board-node-bet-container {
+            position: absolute;
+            width: 55%;
+            height: 200px;
+            bottom: 16%;
+            /* border: 1px solid #00ea00; */
+            /* background-color: aqua; */
+            left: 50%;
+            transform: translate(-50%, 0);
+            /* opacity: 0.2; */
+        }
+
+        .board-node-select-chip-container {
+            z-index: 1;
+            position: absolute;
+            width: 55%;
+            height: 110px;
+            bottom: 4%;
+            /* border: 1px solid #1900ff; */
+            /* background-color: aqua; */
+            left: 50%;
+            transform: translate(-50%, 0);
+            /* opacity: 0.2; */
+        }
+
+        .node-time-remain {
+            position: absolute;
+            right: 20%;
+            bottom: 50%;
+            width: 100px;
+            height: 100px;
+            /* background-color: #00ea00; */
+        }
+
+        .node-time-remain>.node-bg-time-remain {
+            position: absolute;
+            background: url("https://boc6.fun/assets/xocxoclive/native/99/999407b1-b5bd-45a3-96fc-541c7e5ca30d.7a1ce.png") no-repeat scroll 0 0 transparent;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+        .node-time-remain>.node-spinner-time-remain {
+            position: absolute;
+            background: url("https://boc6.fun/assets/xocxoclive/native/fc/fc6bd809-0cd4-48eb-af0c-b5d688417a2e.34c04.png") no-repeat scroll 0 0 transparent;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .node-time-remain>.node-spinner-time-remain {
+            -webkit-animation: spinner-rotate 1s infinite;
+            -moz-animation: spinner-rotate 1s infinite;
+            -ms-animation: spinner-rotate 1s infinite;
+            animation: spinner-rotate 1s infinite;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+            -ms-animation-timing-function: linear;
+            animation-timing-function: linear
+        }
+
+        @keyframes spinner-rotate {
+            100% {
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes flickerAnimation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes flickerAnimation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes flickerAnimation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes flickerAnimation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animate-flicker {
+            -webkit-animation: flickerAnimation .5s infinite;
+            -moz-animation: flickerAnimation .5s infinite;
+            -o-animation: flickerAnimation .5s infinite;
+            animation: flickerAnimation .5s infinite;
+        }
+
+        .node-time-remain>.node-text-time-remain {
+            font-family: 'Saira Semi Condensed', sans-serif;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #ff450f;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-size: 47px;
+            font-weight: 600;
+            margin: 15% 0% 0% 0%;
+            color: rgb(255 214 9);
+            text-align: center;
+        }
+
+        .footer-node-container {
+            position: absolute;
+            width: 100%;
+            height: 110px;
+            bottom: 0%;
+            /* border: 1px solid #c91a1a; */
+            /* background-color: aqua; */
+            left: 50%;
+            transform: translate(-50%, 0);
+            /* opacity: 0.2; */
+        }
+
+        .node-current-balance {
+            position: absolute;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/94/94971ef6-c765-4f90-be71-f7828e716a1c.80226.png") no-repeat scroll 0 0 transparent;
+            width: 213px;
+            height: 45px;
+            left: 0%;
+            bottom: 0%;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 13px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .node-total-bet-volome {
+            position: absolute;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/5d/5d241ec1-a939-44f3-9e49-7ec202f5324c.6b99e.png") no-repeat scroll 0 0 transparent;
+            width: 213px;
+            height: 45px;
+            right: 0%;
+            bottom: 0%;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 13px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .fast-notify {
+            font-family: 'Play', sans-serif;
+            position: absolute;
+            transition: transform .2s;
+            background: url(https://i.imgur.com/bFYFj7I.png) no-repeat 0 0 transparent;
+            background-size: contain;
+            background-position: center;
+            width: 947px;
+            height: 96px;
+            top: 69%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            color: rgb(247, 210, 26);
+            font-size: 33px;
+            font-weight: 600;
+            padding: 23px;
+            text-align: center;
+        }
+
+        .node-player {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/bc/bca681f3-3efa-40af-a907-268a8101a241.88aa7.png") no-repeat scroll 0 0 transparent;
+            width: 240px;
+            height: 90px;
+            left: 5%;
+            top: 4%;
+        }
+
+        .node-player-double {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/6e/6e2b7d79-19d3-4a36-851a-bc5968beb665.0d7be.png") no-repeat scroll 0 0 transparent;
+            width: 240px;
+            height: 90px;
+            left: 3%;
+            bottom: 0%;
+        }
+
+        .node-banker {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/e4/e4383ce0-af96-46d4-a7d2-d728ae5c7ad0.f8cef.png") no-repeat scroll 0 0 transparent;
+            width: 240px;
+            height: 90px;
+            right: 5%;
+            top: 4%
+        }
+
+        .node-banker-double {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/1c/1cc384b9-7482-4e2d-b1db-3736ba9f142b.fc762.png") no-repeat scroll 0 0 transparent;
+            width: 240px;
+            height: 90px;
+            right: 3%;
+            bottom: 0%;
+        }
+
+        .node-draw {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/2a/2ae24f7b-e934-4bd6-beb7-845c554bef7c.c58fb.png") no-repeat scroll 0 0 transparent;
+            width: 240px;
+            height: 100px;
+            left: 27%;
+            bottom: 0%;
+        }
+
+        .node-super {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/19/19b2941a-5a3f-47f0-a27b-cc7d7437dc33.08869.png") no-repeat scroll 0 0 transparent;
+            width: 240px;
+            height: 100px;
+            right: 27%;
+            bottom: 0%;
+        }
+
+        /* .node-player:hover,
+        .node-player-double:hover,
+        .node-banker:hover,
+        .node-banker-double:hover,
+        .node-draw:hover,
+        .node-super:hover {
+            transform: scale(1.1);
+        } */
+
+        .node-win-player {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/dd/ddfd4a1d-de2f-4afc-b17c-7fbd1b5629a6.18510.png") no-repeat scroll 0 0 transparent;
+            width: 266px;
+            height: 122px;
+            left: 3.3%;
+            top: -8%;
+        }
+
+        .node-win-player-double {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/dd/ddfd4a1d-de2f-4afc-b17c-7fbd1b5629a6.18510.png") no-repeat scroll 0 0 transparent;
+            width: 266px;
+            height: 122px;
+            left: 1.3%;
+            bottom: -4%;
+        }
+
+        .node-win-banker {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/19/19fb3c61-596c-4ef2-8150-e64ea0ddc540.54b5b.png") no-repeat scroll 0 0 transparent;
+            width: 266px;
+            height: 122px;
+            right: 4.3%;
+            top: -8%;
+        }
+
+        .node-win-banker-double {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/19/19fb3c61-596c-4ef2-8150-e64ea0ddc540.54b5b.png") no-repeat scroll 0 0 transparent;
+            width: 266px;
+            height: 122px;
+            right: 2.2%;
+            bottom: -4%;
+        }
+
+        .node-win-draw {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/37/37156404-390f-43a3-96b5-7b2f63ebbc4a.1cbe1.png") no-repeat scroll 0 0 transparent;
+            width: 266px;
+            height: 128px;
+            left: 25.2%;
+            bottom: -2%;
+        }
+
+        .node-win-super {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/49/493e80bf-d03f-49cd-adc8-6f532147447b.1071a.png") no-repeat scroll 0 0 transparent;
+            width: 266px;
+            height: 128px;
+            right: 26.4%;
+            bottom: -2%;
+        }
+
+
+        .node-chip-1 {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/5d/5db91a12-906c-42ea-890c-b5873834403a.d3a9d.png") no-repeat scroll 0 0 transparent;
+            background-size: cover;
+            width: 70px;
+            height: 70px;
+            left: 27%;
+            bottom: 13%;
+        }
+
+        .node-chip-10 {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/ba/ba5a0253-e53b-4d6e-87a5-a1162b873587.08688.png") no-repeat scroll 0 0 transparent;
+            background-size: cover;
+            width: 70px;
+            height: 70px;
+            left: 37%;
+            bottom: 13%;
+        }
+
+        .node-chip-100 {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/f3/f35f1173-f891-4ca8-a288-bf7e38d9dbcc.ab6ab.png") no-repeat scroll 0 0 transparent;
+            background-size: cover;
+            width: 70px;
+            height: 70px;
+            left: 47%;
+            bottom: 13%;
+        }
+
+        .node-chip-1000 {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/2c/2c788098-a6d2-4b4d-9e77-6da6cbfb0265.53ea2.png") no-repeat scroll 0 0 transparent;
+            background-size: cover;
+            width: 70px;
+            height: 70px;
+            left: 57%;
+            bottom: 13%;
+        }
+
+        .node-chip-10000 {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/bf/bf278071-feee-4952-a93d-260493fe1870.f6a84.png") no-repeat scroll 0 0 transparent;
+            background-size: cover;
+            width: 70px;
+            height: 70px;
+            left: 67%;
+            bottom: 13%;
+        }
+
+        .node-chip-double {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/c1/c1af5b08-55cb-4c87-8a35-f329133d898c.d2b4b.png") no-repeat scroll 0 0 transparent;
+            background-size: cover;
+            width: 180px;
+            height: 70px;
+            left: 4%;
+            bottom: 13%;
+        }
+
+        .node-chip-reset {
+            position: absolute;
+            cursor: pointer;
+            transition: transform .2s;
+            background: url("https://boc6.fun/assets/bacaratlive/native/c7/c7eaaf88-bda7-4f44-86d3-56290f514d63.7cdda.png") no-repeat scroll 0 0 transparent;
+            background-size: cover;
+            width: 180px;
+            height: 70px;
+            right: 4%;
+            bottom: 13%;
+        }
+
+        /* .node-chip-1:hover,
+        .node-chip-10:hover,
+        .node-chip-100:hover,
+        .node-chip-1000:hover,
+        .node-chip-10000:hover {
+            transform: scale(1.2);
+        } */
+
+        .node-chip-1.active,
+        .node-chip-10.active,
+        .node-chip-100.active,
+        .node-chip-1000.active,
+        .node-chip-10000.active {
+            scale: 1.3;
+        }
+    </style>
+
+    <div class="BDw45cKhOY5X-HJyc5_2C _8XOzSmOOEZguY1YmMefoR">
+        <div class="_1h0fCbtWimc44r9dNSenvs _1BIEU2VALeTfh2iEbzGBn-">
+            <ui-view class="ng-scope">
+                <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                    <ui-view class="ng-scope">
+                        <gupw-lobby-live class="ng-scope ng-isolate-scope">
+                            <section class="_32BGGm53XyuQqbr3GBlW0b">
+                                <div id="game-container">
+
+                                    <div class="row-container">
+                                        <div class="full-screen-icon">
+                                            <i class="fa fa-expand fa-3x" style="color: #00ea00;"></i>
+                                        </div>
+                                        <div class="sound-audio-icon">
+                                            <i class="fa fa-volume-xmark fa-3x" style="color: #00ea00;"></i>
+                                        </div>
+                                        <iframe src="" class="iframe-row" id="game-iframe"></iframe>
+
+                                        <div class="node-time-remain" style="display: none;">
+                                            <div class="node-bg-time-remain"></div>
+                                            <div class="node-spinner-time-remain"></div>
+                                            <div class="node-text-time-remain" id="node-text-time-remain"></div>
+                                        </div>
+
+                                        <div class="board-node-container">
+                                            <div class="board-node-bet-container" id="board-node-bet-container">
+                                                <!-- Choise Door Button -->
+                                                <div class="node-player"></div>
+                                                <div class="node-player-double"></div>
+                                                <div class="node-draw"></div>
+                                                <div class="node-super"></div>
+                                                <div class="node-banker"></div>
+                                                <div class="node-banker-double"></div>
+
+                                                <!-- Choise Door Button Mask When Door Win -->
+                                                <div class="animate-flicker node-win-player"></div>
+                                                <div class="animate-flicker node-win-player-double"></div>
+                                                <div class="animate-flicker node-win-draw"></div>
+                                                <div class="animate-flicker node-win-super"></div>
+                                                <div class="animate-flicker node-win-banker"></div>
+                                                <div class="animate-flicker node-win-banker-double"></div>
+                                            </div>
+
+                                            <div class="board-node-select-chip-container">
+                                                <div class="node-chip-double"></div>
+                                                <div class="board-main-chip-select-value">
+                                                    <div class="node-chip-1 active" data-value="1000"></div>
+                                                    <div class="node-chip-10" data-value="10000"></div>
+                                                    <div class="node-chip-100" data-value="100000"></div>
+                                                    <div class="node-chip-1000" data-value="1000000"></div>
+                                                    <div class="node-chip-10000" data-value="10000000"></div>
+                                                </div>
+                                                <div class="node-chip-reset"></div>
+                                            </div>
+                                            <div class="footer-node-container">
+                                                <div class="node-current-balance">
+                                                    Số Dư: 65.878.113
+                                                </div>
+                                                <div class="node-total-bet-volome">
+                                                    Tổng Cuợc: 2.444.126
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Notify  -->
+                                        <div id="fast-notify-container"></div>
+                                    </div>
+
+                                </div>
+                            </section>
+                        </gupw-lobby-live>
+                    </ui-view>
+                </gupw-sample-lobby-layout>
+            </ui-view>
+        </div>
+    </div>
+
+    <script src="/core/js/game/baccarat.js"></script>
+    <%- include('../../includes/footer') %>

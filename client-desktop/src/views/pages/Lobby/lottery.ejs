@@ -1,0 +1,91 @@
+<%- include('../../includes/header'); %>
+
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _3ZCun1s2kCc-R14d73dBdN">
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs _SO-2Z7RXvfRNhyFtEzpo">
+            <!-- uiView: -->
+            <ui-view class="ng-scope">
+                <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                    <!-- uiView: -->
+                    <ui-view class="ng-scope" style="">
+                        <gupw-lobby-lottery class="ng-scope ng-isolate-scope">
+
+
+                            <section ng-class="$ctrl.styles['lottery-banner']" class="_2KfiuIFS-DaO-DlNaIf7VQ">
+                                <div ng-class="$ctrl.styles.wrapper" class="_SO-2Z7RXvfRNhyFtEzpo">
+                                    <img
+                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/421348ed658be88dfabfd1ac4f89c376.png">
+                                    <img
+                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/9f1c0aa3fa609a86360fe8b403b5f297.png">
+                                    <img
+                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/0fb29eed1db7ac16e05adba8ed50f498.png">
+                                </div>
+                            </section>
+
+
+                            <section ng-class="$ctrl.styles['game-list']" class="_3mJOYcGk1BxEvdXwJYsDHp">
+                                <div ng-class="$ctrl.styles.wrapper" class="_SO-2Z7RXvfRNhyFtEzpo">
+
+                                    <ul class="list-unstyled _1WeZEgZzeWtrmxWFpNPhXq"
+                                        ng-class="$ctrl.styles['entrance-list']">
+                                        <!-- ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            ng-click="$ctrl.viewModel.onEntranceClick(entrance)" data-produce="tp"
+                                            ng-class="{ 'active': entrance.active }" class="normal active" style="">
+                                            <figure>
+                                                <img ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/2335d6bb4331a8663b56b17433414ecb.png"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/2335d6bb4331a8663b56b17433414ecb.png">
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">TP
+                                                        Xổ Số</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                            ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal" style="" data-produce="vr">
+                                            <figure>
+                                                <img ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/be5f35857df81f3680aee0800b677850.png"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/be5f35857df81f3680aee0800b677850.png">
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">VR
+                                                        Xổ Số</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    </ul>
+
+
+                                    <ul class="list-unstyled GSmRufnanhTpC6MOTNtf-"
+                                        ng-class="$ctrl.styles['entrance-viewer']">
+                                        <!-- ngIf: $ctrl.viewModel.entranceList[0].active -->
+                                        <li ng-if="$ctrl.viewModel.entranceList[0].active"
+                                            ng-model="$ctrl.viewModel.entranceList[0]"
+                                            ng-click="$ctrl.viewModel.entranceList[0].click()"
+                                            class="ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" style="">
+                                            <figure>
+                                                <img id="lotterty-thumb" ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/fb248257f81d97715d9b8e7acff4488b.jpg"
+                                                    src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/fb248257f81d97715d9b8e7acff4488b.jpg">
+                                                <figcaption>
+                                                    <h5 id="lotterty-title" ng-bind="$ctrl.viewModel.entranceList[0].gameEntranceName"
+                                                        class="ng-binding">RgLottery</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngIf: $ctrl.viewModel.entranceList[0].active -->
+                                        <!-- ngIf: $ctrl.viewModel.entranceList[1].active -->
+                                    </ul>
+                                </div>
+                            </section>
+
+
+                        </gupw-lobby-lottery>
+                    </ui-view>
+                </gupw-sample-lobby-layout>
+            </ui-view>
+        </div>
+    </div>
+
+    <script src="/core/js/lobby/lotterty.js"></script>
+    <%- include('../../includes/footer'); %>

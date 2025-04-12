@@ -1,0 +1,371 @@
+<%- include('includes/header') %>
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _13SSqi-CXmhSukDpitbsQ2">
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs Fyjjbbtu7ez2tp4P1u_9X">
+            <!-- uiView: -->
+            <ui-view class="ng-scope">
+                <gupw-home class="ng-scope ng-isolate-scope">
+                    <gupw-slide-banner class="ng-isolate-scope"><!-- ngIf: $ctrl.loaded -->
+                        <section ng-class="$ctrl.styles.wrapper" class="ng-scope DQFgka5Xh4HQIYXhzIIT1" style="">
+
+                            <div ng-class="$ctrl.styles.slide"
+                                class="swiper mySwiperBanner swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                                <div class="swiper-wrapper" id="swiper-wrapper-57589196c97db227" aria-live="off"
+                                    style="transform: translate3d(-4182px, 0px, 0px); transition-duration: 0ms;">
+                                    <% dataPage.session.siteConfig.site_banner.forEach((item)=> { %>
+                                        <div class="swiper-slide" role="group" aria-label="1 / 5"
+                                            style="width: 1394px;">
+                                            <a href="javascript:window.location='<%= item.permalink %>';">
+                                                <img data-src="<%= item.image_url %>"
+                                                    class="slide-img ls-is-cached lazyloaded"
+                                                    style="cursor: pointer;width: 100%;" src="<%= item.image_url %>">
+                                            </a>
+                                        </div>
+                                        <% }); %>
+                                </div>
+
+                                <div class="swiper-pagination">
+                                </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </section><!-- end ngIf: $ctrl.loaded -->
+                    </gupw-slide-banner>
+
+                    <section ng-class="$ctrl.styles.lobbyList" class="_1hy83K7vczlH5pq7Gp-Bg3xx">
+                        <div class="containewrkndaaps">
+                            <i ng-class="$ctrl.styles.title" class="mStjgcADwBgprsQLlvjuOx"></i>
+                        </div>
+                    </section>
+
+
+                    <section ng-class="$ctrl.styles.lobbyList" class="_1hy83K7vczlH5pq7Gp-Bg3">
+
+                        <section ng-class="$ctrl.styles['lobby-list']" class="_6xHTXmjSmJBT_bJCyqqJ"> <i
+                                ng-class="$ctrl.styles.title" class="mStjgcADwBgprsQLlvjuO"></i>
+                            <ul class="list-unstyled">
+                                <li ui-sref="lobby-live" ng-class="$ctrl.styles.live" onclick="javascript:window.location='/Lobby/Live'"
+                                    class="_17MuHr-4VL1hc1yLC4F_TT"> <button type="button"> <span
+                                            translate="Lobby_Enter_Game" class="ng-scope">vào trò chơi</span> </button>
+                                    <div>
+                                        <h2 translate="Shared_Nav_LiveCasino" class="ng-scope">SÒNG BÀI</h2>
+                                        <p translate="Home_Live_Info" class="ng-scope">Chúng tôi sẽ mang lại cho bạn
+                                            Trải nghiệm thực tế trong sòng bạc</p>
+                                    </div>
+                                </li>
+                                <li ui-sref="lobby-fish" ng-class="$ctrl.styles.fish" onclick="javascript:window.location='/Lobby/Fish'"
+                                    class="_2SZcCctXIfEVaXz1701Ws_"> <button type="button"> <span
+                                            translate="Lobby_Enter_Game" class="ng-scope">vào trò chơi</span> </button>
+                                    <div>
+                                        <h2 translate="Lobby_Fish_Casino" class="ng-scope">BẮN CÁ</h2>
+                                        <p translate="Home_Fish_Info" class="ng-scope">Nền tảng câu cá hàng đầu thế giới
+                                            Có nhiều cách chơi và quà mỗi ngày</p>
+                                    </div>
+                                </li>
+                                <li ui-sref="lobby-board" ng-class="$ctrl.styles.board" onclick="javascript:window.location='/Lobby/Board'"
+                                    class="DhmK1B9CUa8sPoW_W6deh"> <button type="button"> <span
+                                            translate="Lobby_Enter_Game" class="ng-scope">vào trò chơi</span> </button>
+                                    <div>
+                                        <h2 translate="Shared_Nav_Board" class="ng-scope">GAME BÀI 3D</h2>
+                                        <p translate="Home_Card_Info" class="ng-scope">Trò chơi hội đồng thực sự tuyệt
+                                            vời Hàng nghìn người chơi trực tuyến cùng một lúc</p>
+                                    </div>
+                                </li>
+                                <li ui-sref="lobby-sport" ng-class="$ctrl.styles.sport" onclick="javascript:window.location='/Lobby/Sport'"
+                                    class="_3Sb0O-XyHTMedsQQHY6BYx"> <button type="button"> <span
+                                            translate="Lobby_Enter_Game" class="ng-scope">vào trò chơi</span> </button>
+                                    <div>
+                                        <h2 translate="Home_Sport" class="ng-scope">THỂ THAO</h2>
+                                        <p translate="Home_Sport_Info" class="ng-scope">Chúng tôi cung cấp hơn 50 môn
+                                            thể thao Và rất nhiều thị trường cá cược và tùy chọn</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </section>
+
+
+
+
+
+                    <section ng-class="$ctrl.styles.jackpot" class="_3dnG8pTqXGrh0etPH5MUfS">
+                        <div ng-class="$ctrl.styles.wrapper" class="Fyjjbbtu7ez2tp4P1u_9X">
+                            <div>
+                                <!-- <p translate="Shared_Home_jackpotTitle" ng-class="$ctrl.styles.jackpotTitle"
+                                    class="ng-scope _1scVBUHLLHXVErGuX_na-c">Jackpot Khủng</p> -->
+                                <div class="jack5tr"></div>
+                                    <i
+                                    ng-class="$ctrl.styles.jlImg" class="_26fzJdV0qCaapCKH2Ln8y_"></i>
+                                <div ng-class="$ctrl.styles.numArea" class="_32PjLJiChRH9vSP_DOE7-q">
+                                    <!-- ngRepeat: num in $ctrl.bonusBoardViewer.stringBonus track by $index -->
+                                    <div ng-repeat="num in $ctrl.bonusBoardViewer.stringBonus track by $index"
+                                        ng-class="$ctrl.styles.prize" ng-switch="" on="num"
+                                        class="ng-scope _1v7ekCGloG4eWyNWl7kQNT">
+                                        <!-- ngSwitchDefault: -->
+                                        <div ng-switch-default="" ng-class="$ctrl.styles.prizeNum"
+                                            class="ng-binding ng-scope" id="jackpot-countup">2,342,131,123</div>
+                                    </div>
+                                    <span>&nbsp;VNĐ</span>
+                                </div>
+                            </div>
+                            <div> <!-- ngIf: $ctrl.visible -->
+                                <div ng-if="$ctrl.visible" ng-class="$ctrl.styles['game-navigation']"
+                                    class="ng-scope _2APLVdiTol5Ao8YIbWo2AS" style="">
+                                    <ul class="list-unstyled slot-game">
+                                        <!-- ngRepeat: item in $ctrl.gameList -->
+                                        <li ng-repeat="item in $ctrl.gameList" ng-class="{ 'active': item.active }"
+                                            ng-click="$ctrl.selectLobby(item)" class="ng-scope active"
+                                            data-release="propose">
+                                            <div>
+                                                <p nav-link-display="" model="item" class="ng-isolate-scope">TRÒ CHƠI ĐỀ
+                                                    XUẤT
+                                                </p>
+                                            </div>
+                                        </li><!-- end ngRepeat: item in $ctrl.gameList -->
+                                        <li ng-repeat="item in $ctrl.gameList" ng-class="{ 'active': item.active }"
+                                            ng-click="$ctrl.selectLobby(item)" class="ng-scope" data-release="hot">
+                                            <div>
+                                                <p nav-link-display="" model="item" class="ng-isolate-scope">TRÒ CHƠI HOT
+                                                </p>
+                                            </div>
+                                        </li><!-- end ngRepeat: item in $ctrl.gameList -->
+                                    </ul>
+                                    <div ng-class="$ctrl.styles['slot-game-more']" class="_37ztd0CcmvJUOmilszwgmm"> <a
+                                            href="/Lobby/Game" translate="Shared_More" class="ng-scope">Nhiều Hơn</a>
+                                        <span>&gt;</span>
+                                    </div>
+                                </div><!-- end ngIf: $ctrl.visible -->
+                                <div ng-class="$ctrl.styles['game-viewer']" class="_3ppcwOkSyQWl-WAP_h_oej">
+                                    <ul id="propose"> <!-- ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL')" style="">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/PG2/08a4fcfb3e9d4d55a089569ace391e06.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/PG2/08a4fcfb3e9d4d55a089569ace391e06.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Kho Báu
+                                                Aztec</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL')">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/JiLi/edca8b1c45f24835b1b2e0d93c150f9e.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/JiLi/edca8b1c45f24835b1b2e0d93c150f9e.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Siêu Cấp
+                                                Ace</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0122')">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/PG2/7f7d9caf30184eea83276c8e3d466aab.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/PG2/7f7d9caf30184eea83276c8e3d466aab.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Đường Mạt
+                                                Chược 2</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0120')">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/PG2/43904a57ccd348f6ad22e1954b449411.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/PG2/43904a57ccd348f6ad22e1954b449411.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Đường Mạt
+                                                Chược</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0119')">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/JiLi/c863a1f1505149a597dc1505c04e533d.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/JiLi/c863a1f1505149a597dc1505c04e533d.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Đế quốc
+                                                hoàng kim</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0118')">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/PG2/4dba20a06d3c40adb04a2a15146f2225.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/PG2/4dba20a06d3c40adb04a2a15146f2225.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Neko May
+                                                Mắn</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0117')">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/FC/688368232423402d96dd1884187e2c64.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/FC/688368232423402d96dd1884187e2c64.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Tết
+                                                Nguyên Đán</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0116')">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/JiLi/1f3a630180eb4b3c88df0b1467a77e64.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/JiLi/1f3a630180eb4b3c88df0b1467a77e64.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Quyền
+                                                Vương</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0115')">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/FC/3e43b41946534a97b0733b93ebea433b.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/FC/3e43b41946534a97b0733b93ebea433b.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Chợ Đêm
+                                            </div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0114')">
+                                            <img ng-src="/cdn/system-requirement/Multimedia/JiLi/c72bc495df3947d2bf44073415f4a3ad.png"
+                                                on-error-src=""
+                                                src="/cdn/system-requirement/Multimedia/JiLi/c72bc495df3947d2bf44073415f4a3ad.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Bảo thạch
+                                                Kala</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                    </ul>
+                                    <ul id="hot" style="display: none;"> <!-- ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0113')" style=""> <img
+                                                ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/JDB/6284f29151454bc98476181b754f9a79.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/JDB/6284f29151454bc98476181b754f9a79.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Siêu bò tót B - Bản cao cấp
+                                            </div>
+                                            <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0112')">
+                                            <img ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/JiLi/3c52cbef38034ceab20b2b60d4348614.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/JiLi/3c52cbef38034ceab20b2b60d4348614.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Vương bài vô hạn</div>
+                                            <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0111')">
+                                            <img ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/TP/651e9bfc2c594e9ba165fd459e78b834.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/TP/651e9bfc2c594e9ba165fd459e78b834.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Thần Tài Giáng Lâm</div>
+                                            <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0110')">
+                                            <img ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/PG2/cf4b78a1b99b46a285edc96b92962786.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/PG2/cf4b78a1b99b46a285edc96b92962786.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Wild Đạo Tặc</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0109')">
+                                            <img ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/JiLi/f809ca0e6c564fa3acbfb6fe4493d08a.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/JiLi/f809ca0e6c564fa3acbfb6fe4493d08a.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Pháo thủ điên cuồng</div>
+                                            <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0108')">
+                                            <img ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/JiLi/99ee634a4ed94059995e42609184ba5d.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/JiLi/99ee634a4ed94059995e42609184ba5d.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Bảng Phong Thần</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0107')">
+                                            <img ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/PG2/09ec2bc444994546a89179944d2959c1.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/PG2/09ec2bc444994546a89179944d2959c1.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Kỳ Lân Mách Nước</div>
+                                            <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0106')">
+                                            <img ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/FC/05cf1bd41ce54cdcb53dd6180993aa10.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/FC/05cf1bd41ce54cdcb53dd6180993aa10.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Chúc mừng năm mới 2</div>
+                                            <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0105')">
+                                            <img ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/PG2/f721927f704441bb8fa63a195999f1ff.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/PG2/f721927f704441bb8fa63a195999f1ff.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">QUYẾT CHIẾN TIỀN THƯỞNG</div>
+                                            <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                        <li ng-repeat="game in $ctrl.viewer" ng-click="$ctrl.toGame(game)"
+                                            class="ng-scope" onclick="launchGame('JL', 'JL0104')">
+                                            <img ng-src="https://haon2020.earvf.net/system-requirement/Multimedia/JiLi/29531f1c66d34d4d9238c54f14afde77.png"
+                                                on-error-src=""
+                                                src="https://haon2020.earvf.net/system-requirement/Multimedia/JiLi/29531f1c66d34d4d9238c54f14afde77.png">
+                                            <div ng-class="$ctrl.styles['game-name']" ng-bind="game.displayName"
+                                                class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Điên Cuồng 777</div> <i></i>
+                                        </li><!-- end ngRepeat: game in $ctrl.viewer -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section ng-class="$ctrl.styles.info" class="_3LoZp49K5CfZeIIBXXzJl3nx6"></section>
+
+                    <!-- <section ng-class="$ctrl.styles.gameLobby" class="_3mAkjAlBcnkzhOZybxaMg">
+                        <div ng-class="$ctrl.styles.wrapper" class="Fyjjbbtu7ez2tp4P1u_9X">
+                            <p translate="Shared_Home_gameTitle" ng-class="$ctrl.styles.gameTitle"
+                                class="ng-scope _1NGt0638tGqGYaZZ-tbiMe">ĐỪNG BỎ LỠ</p>
+                            <ul>
+                                <li ui-sref="lobby-live" ng-class="$ctrl.styles.lobbyLive"
+                                    onclick="window.location='/Lobby/Live'" class="_12Trp3-PVKK2-fE9n0-5hI">
+                                    <h5>Casino Trực Tuyến</h5>
+                                    <p translate="Shared_LiveInfo" class="ng-scope">Cung cấp 37 Bàn
+                                        Poker, Roulette và Xúc xắc, v.v. suốt 365 ngày, Dealer quyến
+                                        rũ phục vụ 24 giờ cả ngày</p>
+                                    <div ng-class="$ctrl.styles.hoverBorder" class="_2vs4A1CDnPjKQlYkjETHke">Chơi ngay
+                                    </div>
+                                </li>
+                                <li ui-sref="lobby-slot" ng-class="$ctrl.styles.lobbySlot"
+                                    onclick="window.location='/Lobby/Game'" class="_1Elw77eRFnHHQ-zCIUIRxS">
+                                    <h5>Nổ Hũ</h5>
+                                    <p translate="Shared_SlotInfo" class="ng-scope">Hơn 200 NỔ HŨ
+                                        với các Table Games Chơi &amp; Thắng!</p>
+                                    <div ng-class="$ctrl.styles.hoverBorder" class="_2vs4A1CDnPjKQlYkjETHke">Chơi ngay
+                                    </div>
+                                </li>
+                                <li ui-sref="lobby-fish" ng-class="$ctrl.styles.lobbyFish"
+                                    onclick="window.location='/Lobby/Fish'" class="_18cRmaoZJKMO99RQTMCGfo">
+                                    <h5>BẮN CÁ</h5>
+                                    <p translate="Shared_FishInfo" class="ng-scope">Bắn cá với các
+                                        chế độ mới và hiệu ứng đặc biệt! Giải Jackpot mở rộng Làm
+                                        cho cuộc săn lùng của bạn trở nên mãnh liệt và thú vị hơn!
+                                    </p>
+                                    <div ng-class="$ctrl.styles.hoverBorder" class="_2vs4A1CDnPjKQlYkjETHke">Chơi ngay
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section> -->
+                </gupw-home></ui-view>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="/core/js/lobby/homepage.js"></script>
+
+    <%- include('includes/footer') %>

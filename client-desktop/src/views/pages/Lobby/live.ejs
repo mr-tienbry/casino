@@ -1,0 +1,183 @@
+<%- include('../../includes/header') %>
+
+
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _8XOzSmOOEZguY1YmMefoR">
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs _1BIEU2VALeTfh2iEbzGBn-">
+            <ui-view class="ng-scope">
+                <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                    <ui-view class="ng-scope" style="">
+                        <gupw-lobby-live class="ng-scope ng-isolate-scope">
+
+                            <section ng-class="$ctrl.styles['live-banner']" class="_32BGGm53XyuQqbr3GBlW0b">
+
+                                <div class="se" ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-if="$ctrl.viewModel.currentItem.gameEntranceName == entrance.gameEntranceName"
+                                    style="" id="bg_logo">
+                                    <div ng-class="$ctrl.styles.wrapper" class="_1BIEU2VALeTfh2iEbzGBn-">
+                                        <img id="item_1"
+                                            src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/af2d5fb889d5e6054f9bbd51a7c384e5.png">
+                                        <img id="item_2"
+                                            src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/6fe3ee034cbfca330e64f11585845f1b.png">
+                                        <div ng-class="$ctrl.styles.info" class="rSwCoTiDhlWqK7Mu_zsA9">
+                                            <div ng-class="$ctrl.styles.logo" class="_22ZrEaht21tuC3L9O5AZXe"></div>
+                                            <p translate="Shared_Live" class="ng-scope" id="desc">Nhà cung cấp baccarat thời
+                                                gian thực, Trực tiếp từ Sòng bạc</p>
+                                            <button type="button" translate="Shared_Play"
+                                                ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('SEX', 'SEX001')" class="ng-scope playBtn">Cược
+                                                Ngay</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <section>
+                                    <div ng-class="$ctrl.styles.wrapper" class="_1BIEU2VALeTfh2iEbzGBn-">
+
+                                        <ul class="list-unstyled _2DD0Jwig5tgNkOBPtpcM_W"
+                                            ng-class="$ctrl.styles['game-list']">
+
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="SE" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal active" style="">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/aa842ed24e85dd5f6d3d2f31c7b9381f.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/aa842ed24e85dd5f6d3d2f31c7b9381f.png">
+                                                </figure>
+                                            </li>
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="SA" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal" style="">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/71e77f2934d4bff1561207a2a4e02ccf.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/71e77f2934d4bff1561207a2a4e02ccf.png">
+                                                </figure>
+                                            </li>
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="EG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/920875ac3aee7453df5c4913ac7ce488.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/920875ac3aee7453df5c4913ac7ce488.png">
+                                                </figure>
+                                            </li>
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="TP" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/0f22f671abd7352faa929621a2635479.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/0f22f671abd7352faa929621a2635479.png">
+                                                </figure>
+                                            </li>
+
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="BG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/28e198ee26ac237d61be1210fb3b1137.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/28e198ee26ac237d61be1210fb3b1137.png">
+                                                </figure>
+                                            </li>
+
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="MG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/86f747885df5413f97923dca922ee756.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/86f747885df5413f97923dca922ee756.png">
+                                                </figure>
+                                            </li>
+
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="XG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/bc6a4f4d650bf06034c19943a9cb801b.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/bc6a4f4d650bf06034c19943a9cb801b.png">
+                                                </figure>
+                                            </li>
+
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="AB"
+                                                ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/075ad374423af9867f5787dd949df321.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/075ad374423af9867f5787dd949df321.png">
+                                                </figure>
+                                            </li>
+
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="PT" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/3af1c00654b9ecf0aeae469f1a1e2e5e.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/3af1c00654b9ecf0aeae469f1a1e2e5e.png">
+                                                </figure>
+                                            </li>
+
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="DG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/c2d92a85af2956235346e36f07051073.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/c2d92a85af2956235346e36f07051073.png">
+                                                </figure>
+                                            </li>
+
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="WM" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/44966d277b1d1f8f01560a9562e621f0.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/44966d277b1d1f8f01560a9562e621f0.png">
+                                                </figure>
+                                            </li>
+
+                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                data-produce="AG" ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                                ng-class="{ 'active': entrance.active }" class="normal">
+                                                <figure>
+                                                    <img ng-if="!entrance.imgUrl"
+                                                        ng-src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/4865a7ca99d838337b5da92f0cefb0a6.png"
+                                                        class="ng-scope"
+                                                        src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/4865a7ca99d838337b5da92f0cefb0a6.png">
+                                                </figure>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </section>
+
+
+                            </section>
+                        </gupw-lobby-live>
+                    </ui-view>
+                </gupw-sample-lobby-layout>
+            </ui-view>
+        </div>
+    </div>
+
+
+    <script src="/core/js/lobby/live.js"></script>
+    <%- include('../../includes/footer') %>

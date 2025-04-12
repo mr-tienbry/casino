@@ -1,0 +1,1253 @@
+<html>
+<link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+<link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+<style lang="en" type="text/css" id="dark-mode-custom-style"></style>
+<style lang="en" type="text/css" id="dark-mode-native-style"></style>
+<style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://i.imgur.com/DEw5VbE.png" type="image/png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" content="notranslate">
+    <meta name="apple-mobile-web-app-title" content="<%=dataPage.session.siteConfig.site_name;%>">
+    <meta name="description" content="<%=dataPage.session.siteConfig.site_description;%>">
+    <meta name="keywords" content="<%=dataPage.session.siteConfig.site_keyword;%>">
+    <title>
+        <%=dataPage.session.siteConfig.site_name;%>
+    </title>
+    <base href="/">
+    <script src="/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/preload.bundle.js"></script>
+    <script src="/cdn/system-requirement/libs/js-loading-overlay/1.2.0/js-loading-overlay.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="/core/js/custom/helpers.js"></script>
+    <script src="https://inorganik.github.io/countUp.js/dist/countUp.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/core/css/style.css" />
+    <script>
+        let isLogin = false;
+        let bearerToken = "";
+        let mainApi = "<%=dataPage.config.MAIN_API%>";
+    </script>
+    <% if (dataPage.session.user) { %>
+        <script>
+            isLogin = true;
+            bearerToken = "<%=dataPage.session.accessToken%>";
+        </script>
+        <% } %>
+</head>
+
+<body id="rootBody" class="vi">
+
+    <div class="modal fade ng-scope ng-isolate-scope _1JBcL6HDlLWD_Uyz1vyjml in" role="dialog" index="0"
+        animate="animate" tabindex="-1" uib-modal-animation-class="fade" modal-in-class="in" modal-animation="true"
+        style="z-index: 1050; display: none;">
+        <div class="modal-dialog ">
+            <div class="modal-content" uib-modal-transclude="">
+                <gupw-dialog-marquee resolve="$resolve" modal-instance="$uibModalInstance" close="$close($value)"
+                    dismiss="$dismiss($value)" class="ng-scope ng-isolate-scope">
+                    <aside class="M0RLBhDgSoQFqxO29GIML">
+                        <div class="Rn3ih1l6ZrhPkhTDA5g6O">
+                            <h2 translate="Shared_NewsInfo" class="ng-scope">Tin tức mới nhất</h2>
+                        </div>
+                        <ul>
+                            <!-- ngRepeat: item in $ctrl.list track by $index -->
+                            <li ng-repeat="item in $ctrl.list track by $index" class="ng-binding ng-scope">
+                                👉🏻👉🏻👉🏻【Phần thưởng ngày 12 tháng 9】 Các thành viên thân mến Xin chào các bạn! Vào
+                                ngày 12/9 của ngày khuyến mãi lớn, [Phần thưởng bí ẩn] đã được hệ thống phát ngẫu nhiên
+                                thành công, Thành viên bấm vào để nhận [Gói LìXì Khuyến Mãi Ngày Hội], và phần thưởng ưu
+                                đãi chỉ cần hoàn thành 1 vòng cá cược để rút tiền! Ngoài ra còn có phần thưởng tiếp theo
+                                như: [Phần thưởng ngày hội viên 25/9 ], mong mọi người thông báo cho bạn bè cùng nhanh
+                                chóng tham gia 69VN.COM, tôi tin rằng 69VN.COM sẽ không làm bạn thất vọng!</li>
+                            <!-- end ngRepeat: item in $ctrl.list track by $index -->
+                            <li ng-repeat="item in $ctrl.list track by $index" class="ng-binding ng-scope">👍👍👍Nếu bạn
+                                muốn nhận thưởng bí ẩn 56.9K, vui lòng đăng ký tài khoản thành viên: Vào 【 69VNKM.COM 】
+                                điền thông tin để đăng ký, không cần liên hệ Chăm sóc khách hàng online! Sau khi gửi đề
+                                nghị thành công, hệ thống sẽ hoàn tất xử lý trong vòng 10 phút. Bạn có thể kiểm tra kết
+                                quả khuyến mãi trong mục hệ thống khuyến mãi tự động. Chăm sóc khách hàng online không
+                                thể giúp bạn kiểm tra kết quả khuyến mãi của bạn có thành công hay không!</li>
+                            <!-- end ngRepeat: item in $ctrl.list track by $index -->
+                        </ul>
+                        <div class="_9PbX_LFgnXvcTnC_3cq6B">
+                            <span ng-click="$ctrl.ok()" translate="Common_Closed" class="ng-scope">Đóng</span>
+                        </div>
+                    </aside>
+                </gupw-dialog-marquee>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Login -->
+    <div uib-modal-window="modal-window"
+        class="modal _2fMGqDLeVdueHNrY6jh1tZ fade ng-scope ng-isolate-scope in modal-login" role="dialog" index="0"
+        animate="animate" ng-style="{'z-index': 1050 + $$topModalIndex*10, display: 'block'}" tabindex="-1"
+        uib-modal-animation-class="fade" modal-in-class="in" modal-animation="true"
+        style="z-index: 1050; display: none;">
+        <div class="modal-dialog ">
+            <div class="modal-content" uib-modal-transclude="">
+                <gupw-login-box resolve="$resolve" modal-instance="$uibModalInstance" close="$close($value)"
+                    dismiss="$dismiss($value)" class="ng-scope ng-isolate-scope">
+                    <button ng-class="$ctrl.styles.close" class="btn btn-link _38xNbPhu8VneFOc5oh78Hr"
+                        ng-click="$ctrl.dismiss()">
+                    </button>
+                    <div ng-class="$ctrl.styles['login-box']" class="_3N2lRww2b9eZP-F5fSS-Rq">
+                        <section>
+                            <p ng-class="$ctrl.styles.title" translate="Shared_Login"
+                                class="ng-scope _3V5PSPFHO8cb-X1rl7dgEO">ĐĂNG NHẬP</p>
+                            <p ng-class="$ctrl.styles.txt" class="_3bcYJCzylw0eAO3uq2kJMq">
+                                <span translate="Shared_UnRegistered" class="ng-scope">Không có tài khoản ? </span>
+                                <button ng-click="$ctrl.openRegisterModal()" translate="Shared_Register_Now"
+                                    class="ng-scope">ĐĂNG KÝ</button>
+                            </p>
+
+                            <form novalidate="" ng-submit="$ctrl.login()"
+                                class="ng-invalid ng-invalid-required ng-dirty ng-valid-parse" id="loginForm">
+                                <div ng-class="$ctrl.styles['input-wrapper']" class="_3kf2U2RqwnANN5VYWFRt8X">
+                                    <input type="text" placeholder="tài khoản" ng-model="$ctrl.user.account.value"
+                                        class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" id="username">
+                                </div>
+                                <div ng-class="$ctrl.styles['input-wrapper']" class="_3kf2U2RqwnANN5VYWFRt8X">
+                                    <input type="password" placeholder="mật khẩu" ng-model="$ctrl.user.password.value"
+                                        class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" id="password">
+                                </div>
+                                <!-- <div ng-class="$ctrl.styles['input-wrapper']" class="_3kf2U2RqwnANN5VYWFRt8X"> <i></i>
+                                    <gupw-captcha-login-box class="ng-isolate-scope">
+                                        <input type="text" placeholder="Mã xác minh" required=""
+                                            class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched"
+                                            id="captcha">
+                                        <img class="dVSNlKsQ1qaz1uSto7bNM" style="height: 72%;"
+                                            id="_3kf2U2RqwnANN5VYWFRt8Xcaptcha" src=""
+                                            onclick="initCaptcha($(this).attr('id'))">
+                                    </gupw-captcha-login-box>
+                                </div> -->
+                                <p ng-class="$ctrl.styles['forget']" translate="Shared_Forget" forget-password=""
+                                    class="ng-scope _1C9PC4dCm44t51TocYNw0L"
+                                    onclick="window.location='<%=dataPage.session.siteConfig.contact.telegram;%>'">
+                                    Quên mật khẩu?
+                                </p>
+                                <button type="submit" ng-class="$ctrl.styles['login-btn']"
+                                    class="_1elJEDoklSJeZCRhRorPTp" ng-mouseenter="$ctrl.agreeVisible = true"
+                                    ng-mouseleave="$ctrl.agreeVisible = false" ng-disabled="$ctrl.loginPending">
+                                    <span ng-if="!$ctrl.loginPending" translate="Shared_Login"
+                                        class="ng-scope _3kf2U2RqwnANN5VYWFRt8Xl">ĐĂNG
+                                        NHẬP</span>
+                                </button>
+                            </form>
+                        </section>
+                    </div>
+                </gupw-login-box>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Register -->
+    <div uib-modal-window="modal-window" class="modal _1M8UeeUNQsZy4H6GAA2ah3 fade ng-scope ng-isolate-scope in"
+        role="dialog" index="0" animate="animate" ng-style="{'z-index': 1050 + $$topModalIndex*10, display: 'block'}"
+        tabindex="-1" uib-modal-animation-class="fade" modal-in-class="in" modal-animation="true"
+        style="z-index: 1050; display: none;">
+        <div class="modal-dialog " style="padding: 48px;">
+            <div class="modal-content" uib-modal-transclude="">
+                <gupw-register resolve="$resolve" modal-instance="$uibModalInstance" close="$close($value)"
+                    dismiss="$dismiss($value)" class="ng-scope ng-isolate-scope">
+                    <button ng-class="$ctrl.styles.close" class="btn btn-link _2ZxfNIqB8ZGUvf62lMlRii"
+                        ng-click="$ctrl.dismiss()"></button>
+                    <article ng-class="$ctrl.styles.article" class="_3Ep7x5F8gsaERZQuGfyGNo">
+                        <div ng-class="$ctrl.styles.title" class="_1_Ib3et6YkodyIb6NDva3w">
+                            <p translate="Register_Account_Registration" class="ng-scope">Đăng ký tài khoản</p>
+                        </div>
+                        <div ng-class="$ctrl.styles.content" class="_3jqXktvTialDzXUMLf4RzN">
+                            <gupw-register-info class="ng-isolate-scope">
+                                <div ng-if="!$ctrl.pending" ng-class="$ctrl.styles.wrapper" class="ng-scope">
+                                    <div ng-if="!$ctrl.enable" class="ng-scope">
+                                    </div>
+                                </div>
+                            </gupw-register-info>
+                            <gupw-register-form class="ng-isolate-scope">
+                                <div ng-class="$ctrl.styles.wrapper" class="lSU-UeevMWDFTc7xVRq_g">
+                                    <form
+                                        class="form-horizontal ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-parse"
+                                        novalidate="" ng-if="$ctrl.user" ng-submit="$ctrl.submit()" id="registerForm">
+                                        <fieldset>
+                                            <legend translate="Register_Account_Registration" class="ng-scope">đăng ký
+                                                tài khoản</legend>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">
+                                                    <i class="fa fa-star"></i>
+                                                    <i ng-class="[$ctrl.styles.icon, $ctrl.styles.account]"
+                                                        class="RTZW2yuoquNB9325NBM64 _2UiMXOFnWdZw3Smbu-3B1s"></i>
+                                                    <span translate="Register_Member_Account" class="ng-scope">Tên tài
+                                                        khoản</span>
+                                                </label>
+                                                <div class="col-sm-6 ng-isolate-scope" field-error=""
+                                                    field-error-title="$ctrl.user.account.errorMessage"
+                                                    field-error-is-open="$ctrl.user.account.invalid"
+                                                    ng-class="{ 'has-error': $ctrl.user.account.invalid }"
+                                                    style="position: relative;">
+                                                    <input type="text"
+                                                        class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched"
+                                                        placeholder="Từ 2-15 kí tự, phải bắt đầu bằng chữ cái, có thể  gồm cả chữ cái, số và gạch dưới."
+                                                        ng-model="$ctrl.user.account.value"
+                                                        ng-blur="$ctrl.user.account.validate()" id="username">
+                                                </div>
+                                                <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z"
+                                                    ng-class="$ctrl.styles['control-info']"
+                                                    translate="Register_Account_Rules">Từ 2-15 kí tự, phải bắt đầu bằng
+                                                    chữ cái, có thể gồm cả chữ cái, số và gạch dưới.</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">
+                                                    <i class="fa fa-star"></i> <i
+                                                        ng-class="[$ctrl.styles.icon, $ctrl.styles.password]"
+                                                        class="RTZW2yuoquNB9325NBM64 cYKQ6PMli6tgNqBPXifEE"></i>
+                                                    <span translate="Register_Member_Password" class="ng-scope">Mật khẩu
+                                                        thành viên</span>
+                                                </label>
+                                                <div class="col-sm-6 ng-isolate-scope" field-error=""
+                                                    field-error-title="$ctrl.user.password.errorMessage"
+                                                    field-error-is-open="$ctrl.user.password.invalid"
+                                                    ng-class="{ 'has-error': $ctrl.user.password.invalid }"
+                                                    style="position: relative;">
+                                                    <input type="password"
+                                                        class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched"
+                                                        placeholder="Hơn 6 ký tự phải bao gồm chữ cái và số"
+                                                        ng-model="$ctrl.user.password.value"
+                                                        ng-blur="$ctrl.user.password.validate()"
+                                                        ng-change="$ctrl.user.checkPasswordStrength()" id="password">
+                                                </div>
+                                                <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z"
+                                                    ng-class="$ctrl.styles['control-info']"
+                                                    translate="Register_Enter_Password">Hơn 6 ký tự phải bao gồm chữ cái
+                                                    và số</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">
+                                                    <i class="fa fa-star"></i> <i
+                                                        ng-class="[$ctrl.styles.icon, $ctrl.styles.confirmPassword]"
+                                                        class="RTZW2yuoquNB9325NBM64 _3_CY-cI3LmxyXzViEulfBi"></i>
+                                                    <span translate="Register_Confirm_Password" class="ng-scope">Xác
+                                                        nhận
+                                                        mật khẩu</span>
+                                                </label>
+                                                <div class="col-sm-6 ng-isolate-scope" field-error=""
+                                                    field-error-title="$ctrl.user.confirmPassword.errorMessage"
+                                                    field-error-is-open="$ctrl.user.confirmPassword.invalid"
+                                                    ng-class="{ 'has-error': $ctrl.user.confirmPassword.invalid }"
+                                                    style="position: relative;">
+                                                    <input type="password"
+                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                        placeholder="Vui lòng xác nhận lại mật khẩu của bạn"
+                                                        ng-model="$ctrl.user.confirmPassword.value"
+                                                        ng-blur="$ctrl.user.confirmPassword.validate()"
+                                                        id="password_cf">
+                                                    <!-- ngIf: isOpen -->
+                                                </div>
+                                                <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z"
+                                                    ng-class="$ctrl.styles['control-info']"
+                                                    translate="Register_Enter_Confirm_Password">Vui lòng xác nhận lại
+                                                    mật khẩu của bạn</div>
+                                            </div>
+                                            <legend translate="Register_Member_Profile" class="ng-scope">Thông tin hội
+                                                viên</legend>
+                                            <!-- ngIf: $ctrl.user.name.visible -->
+                                            <div class="form-group name ng-scope" ng-if="$ctrl.user.name.visible">
+                                                <label class="col-sm-2 control-label">
+                                                    <!-- ngIf: $ctrl.user.name.required -->
+                                                    <i class="fa fa-star ng-scope" ng-if="$ctrl.user.name.required"></i>
+                                                    <!-- end ngIf: $ctrl.user.name.required -->
+                                                    <i ng-class="[$ctrl.styles.icon, $ctrl.styles.name]"
+                                                        class="RTZW2yuoquNB9325NBM64 _1d4AoeHEaIWHY0n4MUXmjZ"></i>
+                                                    <span translate="Register_Real_Name" class="ng-scope">Tên
+                                                        thật</span>
+                                                </label>
+                                                <div class="col-sm-6 ng-isolate-scope" field-error=""
+                                                    field-error-title="$ctrl.user.name.errorMessage"
+                                                    field-error-is-open="$ctrl.user.name.invalid"
+                                                    ng-class="{ 'has-error': $ctrl.user.name.invalid }"
+                                                    style="position: relative;">
+                                                    <input type="text"
+                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                        placeholder="Dùng họ tên giống với tên trên thẻ ngân hàng để đăng kí tài khoản"
+                                                        ng-model="$ctrl.user.name.value"
+                                                        ng-blur="$ctrl.user.name.validate()" id="name">
+                                                    <!-- ngIf: isOpen -->
+                                                </div>
+                                                <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z"
+                                                    ng-class="$ctrl.styles['control-info']"
+                                                    translate="Register_Name_Rules">Dùng họ tên giống với tên trên thẻ
+                                                    ngân hàng để đăng kí tài khoản</div>
+                                            </div>
+
+                                            <div class="form-group name ng-scope" ng-if="$ctrl.user.name.visible">
+                                                <label class="col-sm-2 control-label">
+                                                    <!-- ngIf: $ctrl.user.name.required -->
+                                                    <i class="fa fa-star ng-scope" ng-if="$ctrl.user.name.required"></i>
+                                                    <!-- end ngIf: $ctrl.user.name.required -->
+                                                    <!-- <i ng-class="[$ctrl.styles.icon, $ctrl.styles.name]"
+                                                        class="RTZW2yuoquNB9325NBM64 _1d4AoeHEaIWHY0n4MUXmjZ"></i> -->
+                                                    <span translate="Register_Real_Name" class="ng-scope">Mã đại
+                                                        lý</span>
+                                                </label>
+                                                <div class="col-sm-6 ng-isolate-scope" field-error=""
+                                                    field-error-title="$ctrl.user.name.errorMessage"
+                                                    field-error-is-open="$ctrl.user.name.invalid"
+                                                    ng-class="{ 'has-error': $ctrl.user.name.invalid }"
+                                                    style="position: relative;">
+                                                    <input type="text"
+                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                        placeholder="Dùng họ tên giống với tên trên thẻ ngân hàng để đăng kí tài khoản"
+                                                        ng-model="$ctrl.user.name.value"
+                                                        ng-blur="$ctrl.user.name.validate()" id="refcode">
+                                                    <!-- ngIf: isOpen -->
+                                                </div>
+                                                <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z"
+                                                    ng-class="$ctrl.styles['control-info']"
+                                                    translate="Register_Name_Rules">Vui lòng nhập mã đại lý của bạn (Nếu
+                                                    có)</div>
+                                            </div>
+                                            <input id="phone" style="display: none;" />
+                                            <input id="email" style="display: none;" />
+
+                                        </fieldset>
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label"></label>
+                                                <div class="control-div col-sm-10">
+                                                    <label>
+                                                        <input ng-model="$ctrl.user.agree.value" type="checkbox" checked
+                                                            class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                                                        <span translate="Register_Agree" class="ng-scope">Bạn đã đủ 18
+                                                            tuổi
+                                                            và đồng ý với điều khoản của trang web này.</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button type="submit" ng-class="$ctrl.styles.submit"
+                                                        ng-disabled="$ctrl.registerPending"
+                                                        class="btn btn-default _1SkHEsu5miBpcpNXUNtIoM">
+                                                        <span ng-if="!$ctrl.registerPending"
+                                                            translate="Register_Sign_Up" class="ng-scope">Đăng ký
+                                                            ngay</span>
+                                                    </button>
+                                                    <button type="reset" ng-class="$ctrl.styles.reset"
+                                                        ng-disabled="$ctrl.registerPending"
+                                                        class="btn btn-default _1zNHYKenEo3OwmY_0Ztyrf">
+                                                        <span translate="Register_Reset" class="ng-scope">Đặt lại</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </gupw-register-form>
+                        </div>
+                        <div ng-class="$ctrl.styles.chat" class="_3BkaK2sdBfQGNpaiOe4dfi">
+                        </div>
+                    </article>
+                </gupw-register>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Notify -->
+    <div uib-modal-window="modal-window" class="modal _1M8UeeUNQsZy4H6GAA2notify fade ng-scope ng-isolate-scope in"
+        role="dialog" size="sm" index="1" animate="animate"
+        ng-style="{'z-index': 1050 + $$topModalIndex*10, display: 'block'}" tabindex="-1"
+        uib-modal-animation-class="fade" modal-in-class="in" modal-animation="true"
+        style="z-index: 1060; display: none;">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" uib-modal-transclude="">
+                <gupw-dialog-alert resolve="$resolve" modal-instance="$uibModalInstance" close="$close($value)"
+                    dismiss="$dismiss($value)" class="ng-scope ng-isolate-scope">
+                    <div class="modal-header">
+                        <h4 class="ze8tEtJj_ZjnERvE_Rkertitle ng-scope" translate="Common_Prompt"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div bind-html-compile="$ctrl.content" class="ze8tEtJj_ZjnERvE_Rkercontent">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div>
+                            <button class="btn btn-primary ng-scope ze8tEtJj_ZjnERvE_Rkerclose" ng-click="$ctrl.ok()"
+                                translate="Common_Confirm">Đóng</button>
+                        </div>
+                    </div>
+                </gupw-dialog-alert>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal BackDrop -->
+    <div uib-modal-backdrop="modal-backdrop" class="modal-backdrop fade ng-scope in"
+        ng-style="{'z-index': 1040 + (index &amp;&amp; 1 || 0) + index*10}" uib-modal-animation-class="fade"
+        modal-in-class="in" modal-animation="true" data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"
+        style="z-index: 1040; display: none;">
+    </div>
+
+
+
+
+
+    <div id="app" class="ng-scope _3UvIVoumJj3nKcEjBX9shb _3V7APXh9XanItYU2YPW3te">
+        <!-- uiView: -->
+        <ui-view class="ng-scope" style="">
+            <gupw-app class="ng-scope ng-isolate-scope">
+                <!-- uiView: -->
+                <ui-view class="ng-scope">
+                    <gupw-sample-layout class="ng-scope ng-isolate-scope">
+                        <gupw-header class="ng-isolate-scope">
+                            <header>
+                                <gupw-hot-news class="ng-isolate-scope"><!-- ngIf: $ctrl.newsVisible -->
+                                    <div ng-class="$ctrl.styles.wrapper" ng-if="$ctrl.newsVisible"
+                                        class="ng-scope Hra33TxtHu1C-vZkxSDi7">
+                                        <div ng-class="$ctrl.styles.layer" class="_2f-DvVLvelwJOC7_a45SIc">
+                                            <span ng-class="$ctrl.styles.title" translate="Shared_NewsInfo"
+                                                class="ng-scope _1HKJOEgSu0SSPbgkWjI0rQ">Tin tức mới nhất
+                                                :</span>
+                                            <div ng-class="$ctrl.styles['hot-news']" class="W9N3001mLDTkKCM5ar8j9">
+                                                <div marquee="" style="display: block;">
+                                                    <div style="width: 100000px; transform: translateX(1030px); animation: 226.335s linear 0s infinite normal none running marqueeAnimation-8325873;"
+                                                        class="js-marquee-wrapper">
+                                                        <div class="js-marquee" style="margin-right: 0px; float: left;">
+                                                            <ul ng-class="$ctrl.styles['news-list']"
+                                                                class="_3O7S0w3esoWg5PVs5ZLUi2">
+                                                                <!-- ngRepeat: item in $ctrl.list -->
+                                                                <li ng-repeat="item in $ctrl.list"
+                                                                    ng-click="$ctrl.go(item)"
+                                                                    class="ng-binding ng-scope" style="">
+                                                                    <%=dataPage.session.siteConfig.site_brand_marquee;%>
+                                                                </li>
+                                                                <!-- end ngRepeat: item in $ctrl.list -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div> <ng-transclude></ng-transclude>
+                                            </div>
+                                        </div>
+                                    </div><!-- end ngIf: $ctrl.newsVisible -->
+                                </gupw-hot-news>
+
+                                <section ng-class="$ctrl.styles['header-top']" class="dM4IN4vP0qOz6g1PSzWml">
+                                    <div ng-class="$ctrl.styles.wrapper" class="TFkX-2VIsaFZW7t64YI07">
+                                        <div ng-class="$ctrl.styles.logo" class="_3dDTcIbMuSFyJeAPwLDBe2">
+                                            <a href="/"></a>
+                                        </div>
+                                        <gupw-nav class="ng-isolate-scope">
+                                            <nav ng-class="$ctrl.styles.nav" class="_4GFFQME3VxQOLaxRzBxeQ">
+                                                <ul> <!-- ngRepeat: nav in $ctrl.navigation -->
+                                                    <li ng-repeat="nav in $ctrl.navigation"
+                                                        ng-class="{ 'active': nav.isActive }" class="home"
+                                                        onclick="window.location='/'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/xQiy354.png&quot;);"></i>
+                                                        </div>
+                                                        <a onclick="window.location='/'" ng-click="nav.click($event)">
+                                                            <span nav-link-display="" model="nav"
+                                                                class="ng-isolate-scope">Trang Chủ</span>
+                                                        </a>
+                                                        <!-- ngIf: nav.sub.length > 0 -->
+                                                    </li>
+                                                    <!-- end ngRepeat: nav in $ctrl.navigation -->
+                                                    <li ng-repeat="nav in $ctrl.navigation"
+                                                        ng-class="{ 'active': nav.isActive }" class="slot"
+                                                        onclick="window.location='/Lobby/Game'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/An7aIHb.png&quot;);"></i>
+                                                        </div>
+                                                        <a onclick="window.location='/Lobby/Game'"
+                                                            ng-click="nav.click($event)"> <span nav-link-display=""
+                                                                model="nav" class="ng-isolate-scope">Nổ Hũ</span> </a>
+                                                        <!-- ngIf: nav.sub.length > 0 -->
+                                                        <div ng-class="$ctrl.styles.subnav" ng-if="nav.sub.length > 0"
+                                                            align-position="" class="ng-scope _2xvnAce2IF0yzYHRGAlbG8"
+                                                            style="left: 50%; transform: translateX(-50%);">
+                                                            <!-- ngRepeat: navLayer2List in nav.sub -->
+                                                            <ol ng-repeat="navLayer2List in nav.sub" class="ng-scope">
+                                                                <!-- ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope">
+                                                                    <a ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/pg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/pg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="PG Điện Tử">PG Điện Tử</span>
+                                                                    </a>
+                                                                </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/jili.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/jili.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="JL Điện Tử">JL Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/tp.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/tp.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="TP Điện Tử">TP Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/fc.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/fc.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="FC Điện Tử">FC Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/jdb.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/jdb.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="JDB Điện Tử">JDB Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/cq9.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/cq9.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="CQ9 Điện Tử">CQ9 Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/pp.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/pp.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="PP Điện Tử">PP Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/mg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/mg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="MG Điện Tử">MG Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/va.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/va.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="VA Điện Tử">VA Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/bng.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/bng.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="BNG Điện Tử">BNG Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/rich88.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/rich88.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="RICH88 Điện Tử">RICH88 Điện
+                                                                            Tử</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ka.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ka.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="KA Điện Tử">KA Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ftg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ftg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="FTG Điện Tử">FTG Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ps.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ps.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="PS Điện Tử">PS Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/pt.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/pt.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="PT Điện Tử">PT Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/hb.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/hb.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="HB Điện Tử">HB Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ne.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ne.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="NE Điện Tử">NE Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/spribe.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/spribe.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="Spribe Điện Tử">Spribe Điện
+                                                                            Tử</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/rsg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/rsg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="RSG Điện Tử">RSG Điện Tử</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                            </ol><!-- end ngRepeat: navLayer2List in nav.sub -->
+                                                        </div><!-- end ngIf: nav.sub.length > 0 -->
+                                                    </li><!-- end ngRepeat: nav in $ctrl.navigation -->
+
+                                                    <li ng-repeat="nav in $ctrl.navigation"
+                                                        ng-class="{ 'active': nav.isActive }" class="live"
+                                                        onclick="window.location='/Lobby/Live'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/H6sB5eV.png&quot;);"></i>
+                                                        </div>
+                                                        <a onclick="window.location='/Lobby/Live'"
+                                                            ng-click="nav.click($event)"> <span nav-link-display=""
+                                                                model="nav" class="ng-isolate-scope">Sòng Bài</span>
+                                                        </a>
+                                                        <!-- ngIf: nav.sub.length > 0 -->
+                                                        <div ng-class="$ctrl.styles.subnav" ng-if="nav.sub.length > 0"
+                                                            align-position="" class="ng-scope _2xvnAce2IF0yzYHRGAlbG8"
+                                                            style="left: 50%; transform: translateX(-50%);">
+                                                            <!-- ngRepeat: navLayer2List in nav.sub -->
+                                                            <ol ng-repeat="navLayer2List in nav.sub" class="ng-scope">
+                                                                <!-- ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/se.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/se.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="SE Trực Tuyến">SE Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/sa.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/sa.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="SA Trực Tuyến">SA Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/evo.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/evo.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="EVO Trực Tuyến">EVO Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/tp.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/tp.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="TP Trực Tuyến">TP Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/bg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/bg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="BG Trực Tuyến">BG Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/mg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/mg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="MG Trực Tuyến">MG Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/xg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/xg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="XG Trực Tuyến">XG Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ab.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ab.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="AB Trực Tuyến">AB Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/pt.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/pt.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="PT Trực Tuyến">PT Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/dg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/dg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="DG Trực Tuyến">DG Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/wm.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/wm.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="WM Trực Tuyến">WM Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ag.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ag.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="AG Trực Tuyến">AG Trực
+                                                                            Tuyến</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                            </ol><!-- end ngRepeat: navLayer2List in nav.sub -->
+                                                        </div><!-- end ngIf: nav.sub.length > 0 -->
+                                                    </li><!-- end ngRepeat: nav in $ctrl.navigation -->
+                                                    <li ng-repeat="nav in $ctrl.navigation"
+                                                        ng-class="{ 'active': nav.isActive }" class="fish"
+                                                        onclick="window.location='/Lobby/Fish'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/2tbqgGZ.png&quot;);"></i>
+                                                        </div>
+                                                        <a onclick="window.location='/Lobby/Fish'"
+                                                            ng-click="nav.click($event)"> <span nav-link-display=""
+                                                                model="nav" class="ng-isolate-scope" data-game="">Bắn
+                                                                Cá</span> </a>
+                                                        <!-- ngIf: nav.sub.length > 0 -->
+                                                    </li>
+                                                    <!-- end ngRepeat: nav in $ctrl.navigation -->
+                                                    <li ng-repeat="nav in $ctrl.navigation"
+                                                        ng-class="{ 'active': nav.isActive }" class="sport"
+                                                        onclick="window.location='/Lobby/Sport'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/1NMAszD.png&quot;);"></i>
+                                                        </div>
+                                                        <a onclick="window.location='/Lobby/Sport'"
+                                                            ng-click="nav.click($event)"> <span nav-link-display=""
+                                                                model="nav" class="ng-isolate-scope">Thể Thao</span>
+                                                        </a> <!-- ngIf: nav.sub.length > 0 -->
+                                                        <div ng-class="$ctrl.styles.subnav" ng-if="nav.sub.length > 0"
+                                                            align-position="" class="ng-scope _2xvnAce2IF0yzYHRGAlbG8"
+                                                            style="left: 50%; transform: translateX(-50%);">
+                                                            <!-- ngRepeat: navLayer2List in nav.sub -->
+                                                            <ol ng-repeat="navLayer2List in nav.sub" class="ng-scope">
+                                                                <!-- ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/saba.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/saba.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="SABA Thể Thao">SABA Thể
+                                                                            Thao</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/cmd.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/cmd.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="CMD Thể Thao">CMD Thể Thao</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ug.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ug.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="UG Thể Thao">UG Thể Thao</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/sbo.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/sbo.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="SBO Thể Thao">SBO Thể Thao</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                            </ol><!-- end ngRepeat: navLayer2List in nav.sub -->
+                                                        </div><!-- end ngIf: nav.sub.length > 0 -->
+                                                    </li><!-- end ngRepeat: nav in $ctrl.navigation -->
+                                                    <li ng-repeat="nav in $ctrl.navigation"
+                                                        ng-class="{ 'active': nav.isActive }" class="lottery"
+                                                        onclick="window.location='/Lobby/Lottery'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/jZLK0bk.png&quot;);"></i>
+                                                        </div>
+                                                        <a onclick="window.location='/Lobby/Lottery'"
+                                                            ng-click="nav.click($event)"> <span nav-link-display=""
+                                                                model="nav" class="ng-isolate-scope">Xố Số</span> </a>
+                                                        <!-- ngIf: nav.sub.length > 0 -->
+                                                        <div ng-class="$ctrl.styles.subnav" ng-if="nav.sub.length > 0"
+                                                            align-position="" class="ng-scope _2xvnAce2IF0yzYHRGAlbG8"
+                                                            style="left: 50%; transform: translateX(-50%);">
+                                                            <!-- ngRepeat: navLayer2List in nav.sub -->
+                                                            <ol ng-repeat="navLayer2List in nav.sub" class="ng-scope">
+                                                                <!-- ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/tp.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/tp.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="TP Xổ Số">TP Xổ Số</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/vr.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/vr.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="VR Xổ Số">VR Xổ Số</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                            </ol><!-- end ngRepeat: navLayer2List in nav.sub -->
+                                                        </div><!-- end ngIf: nav.sub.length > 0 -->
+                                                    </li><!-- end ngRepeat: nav in $ctrl.navigation -->
+                                                    <li ng-repeat="nav in $ctrl.navigation"
+                                                        ng-class="{ 'active': nav.isActive }" class="cock"
+                                                        onclick="window.location='/Lobby/CockFighting'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/1Q0ROg6.png&quot;);"></i>
+                                                        </div>
+                                                        <a onclick="window.location='/Lobby/CockFighting'"
+                                                            ng-click="nav.click($event)"> <span nav-link-display=""
+                                                                model="nav" class="ng-isolate-scope">ĐÁ GÀ</span> </a>
+                                                        <!-- ngIf: nav.sub.length > 0 -->
+                                                        <div ng-class="$ctrl.styles.subnav" ng-if="nav.sub.length > 0"
+                                                            align-position="" class="ng-scope _2xvnAce2IF0yzYHRGAlbG8"
+                                                            style="left: 50%; transform: translateX(-50%);">
+                                                            <!-- ngRepeat: navLayer2List in nav.sub -->
+                                                            <ol ng-repeat="navLayer2List in nav.sub" class="ng-scope">
+                                                                <!-- ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ws168.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ws168.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="Ws168 Đá Gà">Ws168 Đá Gà</span>
+                                                                    </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                            </ol><!-- end ngRepeat: navLayer2List in nav.sub -->
+                                                        </div><!-- end ngIf: nav.sub.length > 0 -->
+                                                    </li><!-- end ngRepeat: nav in $ctrl.navigation -->
+                                                    <li ng-repeat="nav in $ctrl.navigation"
+                                                        ng-class="{ 'active': nav.isActive }" class="board"
+                                                        onclick="window.location='/Lobby/Board'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/HiInDU7.png&quot;);"></i>
+                                                        </div>
+                                                        <a onclick="window.location='/Lobby/Board'"
+                                                            ng-click="nav.click($event)"> <span nav-link-display=""
+                                                                model="nav" class="ng-isolate-scope">3D Games</span>
+                                                        </a> <!-- ngIf: nav.sub.length > 0 -->
+                                                        <div ng-class="$ctrl.styles.subnav" ng-if="nav.sub.length > 0"
+                                                            align-position="" class="ng-scope _2xvnAce2IF0yzYHRGAlbG8"
+                                                            style="left: 50%; transform: translateX(-50%);">
+                                                            <!-- ngRepeat: navLayer2List in nav.sub -->
+                                                            <ol ng-repeat="navLayer2List in nav.sub" class="ng-scope">
+                                                                <!-- ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/v8.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/v8.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="V8 Game Bài">V8 Game Bài
+                                                                            3d</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/jili.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/jili.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="JL Game Bài">JILI Game Bài
+                                                                            3d</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/tp.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/tp.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="TP Game Bài">TP Game Bài
+                                                                            3d</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/rich88.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/rich88.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="RICH88 Game Bài">RICH88 Game Bài
+                                                                            3d</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/km.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/km.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="KM Game Bài">KM Game Bài
+                                                                            3d</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/mg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/mg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="MG Game Bài">MG Game Bài
+                                                                            3d</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                                <li ng-repeat="navLayer2 in navLayer2List"
+                                                                    class="ng-scope"> <a
+                                                                        ng-click="navLayer2.click($event)"> <img
+                                                                            ng-src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ftg.png"
+                                                                            src="/cdn/system-requirement/Web.Portal/_Common/Supplier/30x30/ftg.png">
+                                                                        <span nav-link-display="" model="navLayer2"
+                                                                            class="ng-isolate-scope"
+                                                                            data-game="FTG Game Bài">FTG Game Bài
+                                                                            3d</span> </a> </li>
+                                                                <!-- end ngRepeat: navLayer2 in navLayer2List -->
+                                                            </ol><!-- end ngRepeat: navLayer2List in nav.sub -->
+                                                        </div><!-- end ngIf: nav.sub.length > 0 -->
+                                                    </li><!-- end ngRepeat: nav in $ctrl.navigation -->
+                                                    <li ng-repeat="nav in $ctrl.navigation"
+                                                        ng-class="{ 'active': nav.isActive }" class="promotion"
+                                                        onclick="window.location='/Promotion'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/bqN0QgP.png&quot;);"></i>
+                                                        </div>
+                                                        <a onclick="window.location='/Promotion'"
+                                                            ng-click="nav.click($event)"> <span nav-link-display=""
+                                                                model="nav" class="ng-isolate-scope">Ưu Đãi</span> </a>
+                                                        <!-- ngIf: nav.sub.length > 0 -->
+                                                    </li>
+                                                    <!-- end ngRepeat: nav in $ctrl.navigation -->
+                                                    <!-- <li class="download" onclick="window.location='#'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/AZgEdTC.png&quot;);"></i>
+                                                        </div>
+                                                        <a ng-click="nav.click($event)"><span>Tải App</span>
+                                                        </a>
+                                                    </li> -->
+                                                    <!-- end ngRepeat: nav in $ctrl.navigation -->
+                                                    <li class="download" onclick="window.location='/game/baccarat'">
+                                                        <div class="nav-icon">
+                                                            <i ng-style="nav.style"
+                                                                style="background-image: url(&quot;https://i.imgur.com/H6sB5eV.png&quot;);"></i>
+                                                        </div>
+                                                        <a><span>Baccarat</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </gupw-nav>
+                                    </div>
+                                </section>
+                                <section ng-class="$ctrl.styles['header-bottom']" class="_1vpb319UOYFbBhp4y5JgA-">
+                                    <div ng-class="$ctrl.styles.wrapper" class="TFkX-2VIsaFZW7t64YI07"> <span
+                                            ng-bind="$ctrl.meiDonNow | day:'YYYY/MM/DD (ddd) HH:mm:ss'"
+                                            ng-class="$ctrl.styles.time"
+                                            class="ng-binding _1V92G6pCR9QlefaMtJzebU">????/??/?? (T?) ??:??:??</span>
+                                        <gupw-select-language class="ng-isolate-scope">
+                                            <div ng-class="$ctrl.styles.langSelect" class="_3OqQUPa46s3o6Bitt3FEqU">
+                                                <ul> <!-- ngRepeat: lang in $ctrl.languageOptions --><!-- ngIf: $ctrl.currentLanguage == lang.key -->
+                                                    <li ng-if="$ctrl.currentLanguage == lang.key"
+                                                        ng-repeat="lang in $ctrl.languageOptions"
+                                                        ng-class="$ctrl.styles[lang.key]"
+                                                        ng-click="$ctrl.selectLanguage(lang)" title="Tiếng Việt"
+                                                        class="ng-scope _15rC_Jj7RjQR_ctZRr2lf9" style="">
+                                                        <span class="langIcon"></span>
+                                                        <span class="ng-binding">Việt Nam</span>
+                                                    </li>
+                                                    <!-- end ngIf: $ctrl.currentLanguage == lang.key --><!-- end ngRepeat: lang in $ctrl.languageOptions -->
+                                                </ul>
+                                            </div>
+                                        </gupw-select-language>
+                                        <div>
+                                            <ul ng-class="$ctrl.styles['bottom-nav']" class="_2Egm6lv3njt9QN26LE_sjj">
+                                                <li>
+                                                    <i class="fas fa-download" style="color: #a2aabd;"></i>
+                                                    <a target="_blank" translate="Shared_Download" class="ng-scope"
+                                                        href="#">Tải App</a>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-mobile-alt" style="color: #a2aabd;"></i>
+                                                    <a href="https://m.aleobet.com" translate="Shared_Footer_MobileBet"
+                                                        class="ng-scope">Điện Thoại</a>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-headphones-alt" style="color: #a2aabd;"></i>
+                                                    <a href="<%=dataPage.session.siteConfig.contact.telegram;%>"
+                                                        chat-link="" class="ng-scope">Hỗ
+                                                        Trợ</a>
+                                                </li>
+                                            </ul>
+
+
+                                            <% if (dataPage.session.user) { %>
+                                                <gupw-account-box-with-nav ng-if="$ctrl.isLogin"
+                                                    class="ng-scope ng-isolate-scope" style="">
+                                                    <div ng-class="$ctrl.styles.accountBox"
+                                                        class="_2sdLnmQA2QIwPJ6oSpesv3">
+                                                        <div ng-class="$ctrl.styles['account-bg']"
+                                                            class="iHnBkiTDttjHAalYR3Hm-">
+                                                            <ul ng-class="$ctrl.styles['account-info']"
+                                                                class="_1MQUFEv5nMjLr3lpBSzNZw">
+                                                                <li>
+                                                                    <span translate="Shared_Account"
+                                                                        class="ng-scope">tài
+                                                                        khoản</span> <span>:</span>
+                                                                    <span ng-class="$ctrl.styles.account"
+                                                                        title="<%=dataPage.session.user.username%>"
+                                                                        class="ng-binding _3lymj_9N-oJ2lPh20o6tzf">
+                                                                        <%=dataPage.session.user.username%>
+                                                                    </span> <a ui-sref="site-mail"
+                                                                        title="Hộp thư nội bộ" ng-if="!$ctrl.isTrial"
+                                                                        ng-class="$ctrl.styles['mail-box']"
+                                                                        class="ng-scope _3oLYCzsjzUJEx8TWar8j7i"
+                                                                        href="/account/inbox">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <span translate="Shared_Balance" class="ng-scope">Ví
+                                                                        tài khoản</span>
+                                                                    <span>:</span>
+                                                                    <span title="Ví tài khoản"
+                                                                        class="balance ng-binding HU9oLicjLil3hDKujppTr header-balance">
+                                                                        <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+                                                                    </span>
+                                                                    <span ng-class="$ctrl.styles['money-k']"
+                                                                        class="_1_gwbRg6sKAVel36yEdSwe">VNĐ</span>
+                                                                    <button type="button" class="btn btn-link"
+                                                                        title="Cập nhật">
+                                                                    </button>
+                                                                    <div id="callBackAllWallet"
+                                                                        ng-click="$ctrl.callBackAllWallet()">
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                            <button type="button" ng-class="$ctrl.styles.menu"
+                                                                ng-click="$ctrl.switchPanel()"
+                                                                translate="Shared_Member_Center"
+                                                                class="ng-scope _2pgWcte96LWeLJIJSxtBYd">THÔNG
+                                                                TIN</button>
+                                                        </div>
+
+                                                        <div ng-class="$ctrl.styles['action-box']"
+                                                            ng-show="$ctrl.showAccnav"
+                                                            class="_1_C5B74ifan6TN0Qu5DRDU ng-hide">
+                                                            <ul ng-class="$ctrl.styles['account-nav']"
+                                                                ng-click="$ctrl.switchPanel()"
+                                                                class="_2rSrTaqe8BT5mI2r3F5J2g">
+                                                                <li ng-repeat="item in $ctrl.options"
+                                                                    title="{ {item.text | translate }}"
+                                                                    class="ng-scope">
+                                                                    <a ui-sref="bet-record" class="ng-binding"
+                                                                        href="/account/wallet-transfer">Chuyển quỹ trò
+                                                                        chơi</a>
+                                                                </li>
+                                                                <li ng-repeat="item in $ctrl.options"
+                                                                    title="{ {item.text | translate }}"
+                                                                    class="ng-scope">
+                                                                    <a ui-sref="bet-record" class="ng-binding"
+                                                                        href="/account/game-history">Lịch sử đặt
+                                                                        cược</a>
+                                                                </li>
+                                                                <li ng-repeat="item in $ctrl.options"
+                                                                    title="{ {item.text | translate }}"
+                                                                    class="ng-scope">
+                                                                    <a ui-sref="deposit" class="ng-binding"
+                                                                        href="/account/deposit">Nạp tiền trực tuyến</a>
+                                                                </li>
+                                                                <li ng-repeat="item in $ctrl.options"
+                                                                    title="{ {item.text | translate }}"
+                                                                    class="ng-scope">
+                                                                    <a ui-sref="withdraw" class="ng-binding"
+                                                                        href="/account/withdraw">Rút tiền trực
+                                                                        tuyến</a>
+                                                                </li>
+                                                                <li ng-repeat="item in $ctrl.options"
+                                                                    title="{ {item.text | translate }}"
+                                                                    class="ng-scope">
+                                                                    <a ui-sref="transaction" class="ng-binding"
+                                                                        href="/account/finan-history">Chi tiết giao
+                                                                        dịch</a>
+                                                                </li>
+                                                                <li ng-repeat="item in $ctrl.options"
+                                                                    title="{ {item.text | translate }}"
+                                                                    class="ng-scope">
+                                                                    <a ui-sref="security-list" class="ng-binding"
+                                                                        href="/account/inbox">Hòm thư</a>
+                                                                </li>
+                                                                <li ng-repeat="item in $ctrl.options" class="ng-scope">
+                                                                    <a ui-sref="security-list" class="ng-binding"
+                                                                        href="/account/agency">Khu vực đại lý</a>
+                                                                </li>
+                                                            </ul>
+                                                            <button type="button"
+                                                                class="btn btn-link _1TEhFF5lWfbkg-wGKQap0W"
+                                                                onclick="window.location='/auth/logout'">
+                                                                <span ng-show="$ctrl.signOuting"
+                                                                    translate="Common_Processing"
+                                                                    class="ng-scope ng-hide">đang xử lý</span>
+                                                                <span ng-show="!$ctrl.signOuting"
+                                                                    translate="Shared_Logout" class="ng-scope">đăng
+                                                                    xuất</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </gupw-account-box-with-nav>
+                                                <% }else{ %>
+
+                                                    <div ng-if="!$ctrl.isLogin" ng-class="$ctrl.styles.btn"
+                                                        class="ng-scope _3OFBD2SMU4R067-Il-FmFs">
+                                                        <button ng-class="$ctrl.styles.login"
+                                                            ng-click="$ctrl.openLoginModal()" type="button"
+                                                            translate="Shared_Login"
+                                                            class="ng-scope _2mBNgBjbvImj-b_6WuwAFm">ĐĂNG NHẬP</button>
+                                                        <button id="reg" ng-class="$ctrl.styles.reg"
+                                                            ng-click="$ctrl.openRegisterModal()" type="button"
+                                                            translate="Shared_Nav_JoinUs"
+                                                            class="ng-scope ppUNnOlkVUpue-NNt6vxo">ĐĂNG KÝ</button>
+                                                    </div>
+                                                    <% } %>
+
+
+                                        </div>
+                                    </div>
+                                </section>
+                            </header>
+                        </gupw-header>
