@@ -1,0 +1,44 @@
+<% if (dataPage.session.user) { %>
+    <app-member-info-new _ngcontent-serverapp-c151="" _nghost-serverapp-c150="">
+        <section _ngcontent-serverapp-c150=""
+            class="bg-customized-bg-quaternary text-customized-text-primary flex h-[70px] items-center justify-center">
+            <div _ngcontent-serverapp-c150=""
+                class="left flex w-[28%] flex-col items-center justify-center text-center text-xs">
+                <div _ngcontent-serverapp-c150="" class="flex h-full items-center">
+                    <i _ngcontent-serverapp-c150="" class="fas fa-user-circle member text-2xl"></i>
+                    <p _ngcontent-serverapp-c150="" class="flex flex-col text-left">
+                        <span _ngcontent-serverapp-c150="" translate="Home_Hello">Xin chào</span>
+                        <span _ngcontent-serverapp-c150="" class="text-customized-text-tertiary">
+                            <%=dataPage.session.user.username%>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <ul _ngcontent-serverapp-c150=""
+                class="text-customized-text-primary menu relative box-border flex h-full w-[72%] items-center justify-evenly uppercase">
+                <li _ngcontent-serverapp-c150="" class="w-[30%] text-center text-xs" onclick="window.location='/account/deposit'">
+                    <i _ngcontent-serverapp-c150="" class="mb-1 block">
+                        <img _ngcontent-serverapp-c150="" alt=""
+                            src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/01.svg">
+                    </i>
+                    <span _ngcontent-serverapp-c150="">NẠP TIỀN</span>
+                </li>
+                <li _ngcontent-serverapp-c150="" class="w-[30%] text-center text-xs" onclick="window.location='/account/withdraw'">
+                    <i _ngcontent-serverapp-c150="" class="mb-1 block">
+                        <img _ngcontent-serverapp-c150="" alt=""
+                            src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/02.svg">
+                    </i>
+                    <span _ngcontent-serverapp-c150="">Rút tiền</span>
+                </li>
+                <li _ngcontent-serverapp-c150="" class="w-[30%] text-center text-xs" onclick="window.location='/account/game-history'">
+                    <i _ngcontent-serverapp-c150="" class="mb-1 block">
+                        <img _ngcontent-serverapp-c150="" alt=""
+                            src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/03.svg">
+                    </i>
+                    <span _ngcontent-serverapp-c150="">Lịch Sử Cược</span>
+                </li>
+            </ul>
+        </section>
+    </app-member-info-new>
+    <% } %>

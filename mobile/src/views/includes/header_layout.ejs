@@ -1,0 +1,35 @@
+<header _ngcontent-serverapp-c151="" class="header">
+    <div _ngcontent-serverapp-c151="" class="header-wrap">
+        <a _ngcontent-serverapp-c151="" class="logo" href="/">
+            <img _ngcontent-serverapp-c151="" src="<%=dataPage.session.siteConfig.site_logo;%>"></a>
+
+        <section _ngcontent-serverapp-c151="">
+
+            <% if (dataPage.session.user) { %>
+                <div _ngcontent-serverapp-c151="" class="balance">
+                    <span _ngcontent-serverapp-c151="" class="text-customized-text-secondary mx-0.5">
+                        <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+                    </span>
+                    <span _ngcontent-serverapp-c151="" class="currency">VND</span>
+
+                </div>
+                <a _ngcontent-serverapp-c151="" href="/account/deposit" class="financial">
+                    <i _ngcontent-serverapp-c151=""
+                        class="depodit fas fa-envelope-open-dollar text-2xl"></i>
+                </a>
+                <% }else{ %>
+                    <div _ngcontent-serverapp-c151="" class="btns">
+                        <button _ngcontent-serverapp-c151="" type="button"
+                            onclick="window.location='/auth'">
+                            Đăng nhập
+                        </button>
+                    </div>
+                    <% } %>
+
+                        <div _ngcontent-serverapp-c151=""
+                            class="text-customized-text-primary btn-open-right-sidebar">
+                            <i _ngcontent-serverapp-c151="" class="fas fa-bars text-3xl"></i>
+                        </div>
+        </section>
+    </div>
+</header>
